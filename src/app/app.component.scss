@@ -1,0 +1,250 @@
+:root {
+    --background-header-color: rgb(236, 236, 249, 1);
+    --background-header-color-hover: rgba(121, 121, 133, 0.801);
+    --text-header-color: rgb(5, 5, 15, 1);
+    --border-card: rgba(7, 7, 7, 0.205);
+    --background-card: #d3d3d3;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.ba-header {
+    background-color: var(--background-header-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ba-header-left {
+    display: flex;
+    align-items: center;
+    width: 70%;
+    justify-content: flex-start;
+}
+
+.ba-header-right {
+    display: flex;
+    align-items: center;
+    width: 30%;    
+    justify-content: flex-end;
+}
+
+.ba-icon-menu {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.ba-icon-menu:hover {
+    background-color: var(--background-header-color-hover);
+}
+
+.ba-icon-menu > button {
+    border: none;
+    background: none;
+}
+
+.ba-title-header {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.ba-title-header > h1 {
+    margin: 0px;
+    font-size: 1.5em;
+}
+
+.ba-search-header {
+    position: relative;
+}
+
+.ba-search-header > button {
+    position: absolute;
+    top: 2px;
+    background-color: transparent;
+    border: none;
+}
+
+.ba-search-header > input {
+    padding-left: 21px;
+}
+
+.ba-user-header{
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* cards */
+.ba-card {
+    height: 460px;
+    width: 360px;
+    margin: 20px;
+    border: 1px solid var(--border-card);
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+}
+
+.ba-card-tittle {
+    height: 10%;
+    background: var(--background-card);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+.ba-card-tittle > h3 {
+    margin: 0;
+    padding-left: 10px;
+}
+
+.ba-card-body {
+    height: 90%;
+    position: relative;
+}
+
+.ba-card-body > img {
+    height: 30%;
+    width: 40%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 20%;
+    filter: grayscale(100%);
+    background: var(--background-card);
+}
+
+.ba-card-body > p {
+    height: auto;
+    margin: 0px;
+    padding-left: 5%;
+    padding-right: 5%;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.ba-card-body > a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: var(--border-card);
+    cursor: pointer;
+    text-decoration: none;
+    color: initial;
+}
+
+.main-body {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 38px;
+}
+
+.ba-content {        
+    width: 70%;
+    margin-left: 30%;
+}
+
+.ba-card-content {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.left-side-menu {
+    width: 30%;
+    border-right: 2px solid #7e8082;
+    position: fixed;
+    min-height: 100%;
+}
+
+/* left Side Menu */
+.list-menu {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 0px;
+}
+
+.list-menu > li {
+    border-bottom: 1px solid #e6ecef;
+}
+
+.li-menu {    
+    cursor: pointer;
+}
+
+.li-menu:hover {
+    background-color: var(--background-header-color-hover);
+}
+
+.li-menu > div {
+    display: flex;
+    align-content: flex-start;
+    align-items: center;
+}
+.li-menu > div > h3 {
+    margin-left: 3px;
+    margin-left: 10px;
+    font-size: 17px;
+}
+.li-profile {
+    background-color: #d4d6d8;
+    color: white;
+}
+.user-profile {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+}
+.user-profile > h2 {
+    margin-left: 13px;
+    font-size: 15px;
+    align-self: self-start;
+}
+.user-profile > i {
+    font-size: 56px;
+    background-color: white;
+    color: darkslategrey;
+    border-radius: 18px;
+    font-size: 53px;
+    padding-bottom: 4px;
+    padding-left: 3px;
+    padding-right: 3px;
+    margin-left: 5px;
+}
+
+/* breadcrumb */
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}

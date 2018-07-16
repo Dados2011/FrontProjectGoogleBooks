@@ -1,20 +1,179 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    go to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<body>
+  <header>
+    <div class="ba-header">
+      <div class="ba-header-left">
+        <div class="ba-icon-menu" id="btnMenu">
+          <button type="button">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+        <div class="ba-title-header">
+          <h1>Title</h1>
+        </div>
+      </div>
+      <div class="ba-header-right">
+        <div class="ba-search-header">
+          <input type="text" name="searchText" title="Buscador" placeholder="Buscar..." />
+          <button type="button" id="btnSearch">
+            <i class="fa fa-search"></i>
+          </button>
+        </div>
+        <div class="ba-user-header">
+          <i class="far fa-user-circle"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="main-body">
+    <div id="leftSideMenu" class="left-side-menu">
+      <ul id="listMenu" class="list-menu">
+        <li class="li-profile hide-menu-select">
+          <div id="userProfile" class="user-profile">
+            <i class="fas fa-user-secret"></i>
+            <h2 class="hide-menu-select">User Name</h2>
+          </div>
+        </li>
+        <li class="li-menu">
+          <div>
+            <i class="fas fa-home"></i>
+            <h3 class="hide-menu-select">Home</h3>
+          </div>
+        </li>
+        <li class="li-menu">
+          <div>
+            <i class="fas fa-book"></i>
+            <h3 class="hide-menu-select">Collection</h3>
+          </div>
+        </li>
+        <li class="li-menu">
+          <div>
+            <i class="fas fa-star"></i>
+            <h3 class="hide-menu-select"> Favorites</h3>
+          </div>
+        </li>
+        <li class="li-menu">
+          <div>
+            <i class="fas fa-sign-out-alt"></i>
+            <h3 class="hide-menu-select">Log Out</h3>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="ba-content">
+      <div class="ba-breadcrumb">
+        <ul class="breadcrumb">
+          <li>
+            <a class="bzbutton" href="#list.html">Home</a>
+          </li>
+          <li>
+            <a href="#">Books</a>
+          </li>
+          <li>Books</li>
+        </ul>
+      </div>
+      <div id="content">
 
+      </div>
+
+    </div>
+  </section>
+</body>
+
+<!-- <!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bzg 1 Book App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+    crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
+  <link href="./css/styles.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+  <header>
+    <div class="ba-header">
+      <div class="ba-header-left">
+        <div class="ba-icon-menu" id="btnMenu">
+          <button type="button">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+        <div class="ba-title-header">
+          <h1>Title</h1>
+        </div>
+      </div>
+      <div class="ba-header-right">
+        <div class="ba-search-header">
+          <input type="text" name="searchText" title="Buscador" placeholder="Buscar..." />
+          <button type="button" id="btnSearch">
+            <i class="fa fa-search"></i>
+          </button>
+          </form>
+        </div>
+        <div class="ba-user-header">
+          <i class="far fa-user-circle"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="main-body">
+    <div id="leftSideMenu" class="left-side-menu">
+      <ul id="listMenu" class="list-menu">
+        <li class="li-profile hide-menu-select">
+          <div id="userProfile" class="user-profile">
+            <i class="fas fa-user-secret"></i>
+            <h2 class="hide-menu-select">User Name</h2>
+          </div>
+        </li>
+        <li class="li-menu">
+          <div>
+            <i class="fas fa-home"></i>
+            <h3 class="hide-menu-select">Home</h3>
+          </div>
+        </li>
+        <li class="li-menu">
+          <div>
+            <i class="fas fa-book"></i>
+            <h3 class="hide-menu-select">Collection</h3>
+          </div>
+        </li>
+        <li class="li-menu">
+          <div>
+            <i class="fas fa-star"></i>
+            <h3 class="hide-menu-select"> Favorites</h3>
+          </div>
+        </li>
+        <li class="li-menu">
+          <div>
+            <i class="fas fa-sign-out-alt"></i>
+            <h3 class="hide-menu-select">Log Out</h3>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="ba-content">
+      <div class="ba-breadcrumb">
+        <ul class="breadcrumb">
+          <li>
+            <a class="bzbutton" href="#list.html">Home</a>
+          </li>
+          <li>
+            <a href="#">Books</a>
+          </li>
+          <li>Books</li>
+        </ul>
+      </div>
+      <div id="content">
+
+      </div>
+
+    </div>
+  </section>
+</body>
+
+</html> -->
