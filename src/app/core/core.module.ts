@@ -8,6 +8,7 @@ import { CoreComponent } from './containers/core/core.component';
 import { MainContentComponent } from './containers/main-content/main-content.component';
 import { TopNavBarComponent } from './containers/top-nav-bar/top-nav-bar.component';
 import { routes } from './routes.core';
+import { AppPipesModule } from '../app-pipes/app-pipes.module';
 
 const COMPONENTS = [
   CoreComponent,
@@ -21,6 +22,7 @@ const COMPONENTS = [
 @NgModule({
   imports: [
     CommonModule,
+    AppPipesModule,
     RouterModule.forChild(routes)
   ],
   declarations: COMPONENTS
