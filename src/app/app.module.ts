@@ -14,7 +14,7 @@ import { AlertsModule } from './alerts/alerts.module';
   ],
   imports: [
     BrowserModule,
-    ROUTING
+    ROUTING,
     BrowserAnimationsModule,
     AlertsModule
   ],
