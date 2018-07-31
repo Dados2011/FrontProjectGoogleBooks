@@ -9,6 +9,7 @@ import { MainContentComponent } from './containers/main-content/main-content.com
 import { TopNavBarComponent } from './containers/top-nav-bar/top-nav-bar.component';
 import { routes } from './routes.core';
 import { AppPipesModule } from '../app-pipes/app-pipes.module';
+import { AlertsModule } from '../alerts/alerts.module';
 
 const COMPONENTS = [
   CoreComponent,
@@ -23,7 +24,8 @@ const COMPONENTS = [
   imports: [
     CommonModule,
     AppPipesModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    AlertsModule
   ],
   declarations: COMPONENTS
 })

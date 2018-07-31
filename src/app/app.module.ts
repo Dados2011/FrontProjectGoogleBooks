@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { ROUTING } from './app.routes';
 import { AppComponent } from './app.component';
+import { AlertsModule } from './alerts/alerts.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    ROUTING
+    ROUTING,
+    AlertsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
