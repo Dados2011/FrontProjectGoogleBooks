@@ -1,8 +1,8 @@
 <div class="container-fluid">
-  <app-top-nav-bar class="row"></app-top-nav-bar>
+  <app-top-nav-bar class="row" (openAside)="sendState($event)"></app-top-nav-bar>
   <div class="row">
     <section class="content-section">
-      <app-aside-left></app-aside-left>
+      <app-aside-left [asideState]="stateAside"></app-aside-left>
     </section>
     <section class="main-section">
       <app-main-content></app-main-content>

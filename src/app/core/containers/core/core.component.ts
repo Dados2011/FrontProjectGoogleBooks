@@ -9,7 +9,12 @@ export class CoreComponent implements OnInit {
 
   constructor() { }
 
+  stateAside = 'open';
   ngOnInit() {
+  }
+
+  sendState(state: string) {
+    this.stateAside = state;
   }
 
 }
