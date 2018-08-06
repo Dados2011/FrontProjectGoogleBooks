@@ -8,7 +8,9 @@ import { AppComponent } from './app.component';
 import { AlertsModule } from './alerts/alerts.module';
 import { HttpClientModule } from '../../node_modules/@angular/common/http';
 import { HttpClientInMemoryWebApiModule } from '../../node_modules/angular-in-memory-web-api';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BooksDBService } from './api-data/api-books-demo';
+import { AuthModule } from './auth/auth.module';
 
 
 @NgModule({
@@ -22,6 +24,9 @@ import { BooksDBService } from './api-data/api-books-demo';
     AlertsModule,
     HttpModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AuthModule,
     HttpClientInMemoryWebApiModule.forRoot(
       BooksDBService, {dataEncapsulation: false, delay: 3000}
     )
