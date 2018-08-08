@@ -4,7 +4,7 @@
     <section class="content-section">
       <app-aside-left [asideState]="stateAside"></app-aside-left>
     </section>
-    <section class="main-section">
+    <section class="main-section" [ngClass]="(stateAside == 'close')? 'main-collape': ''">
       <app-main-content></app-main-content>
     </section>
   </div>

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject} from "rxjs";
-import { Message } from "../models/message";
+import { Observable, Subject} from 'rxjs';
+import { Message } from '../models/message';
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +16,7 @@ export class MessagesService {
 
   }
 
-  getMessage() :Observable<Message> {
+  getMessage(): Observable<Message> {
     return this.subject.asObservable();
   }
 }

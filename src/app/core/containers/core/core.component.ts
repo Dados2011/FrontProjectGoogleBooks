@@ -14,7 +14,9 @@ export class CoreComponent implements OnInit {
   }
 
   sendState(state: string) {
-    this.stateAside = state;
+    if (state) {
+      this.stateAside = state;
+    }
   }
 
 }

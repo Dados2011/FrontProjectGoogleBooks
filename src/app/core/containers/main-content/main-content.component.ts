@@ -9,7 +9,7 @@ import { Message } from '../../../alerts/models/message';
 })
 export class MainContentComponent implements OnInit {
 
-  constructor(private messageservice : MessagesService) { }
+  constructor(private messageservice: MessagesService) { }
 
   ngOnInit() {
     window.addEventListener('online', this.updateIndicator.bind(this));
@@ -17,13 +17,13 @@ export class MainContentComponent implements OnInit {
 
   }
     updateIndicator(event) {
-      let msg: Message = {msg: '', type: ''};
-      if(event.type == 'online') {
-        msg.msg = 'Success';
-        msg.type= 'success';
+      const msg: Message = {msg: '', type: ''};
+      if (event.type === 'online') {
+        msg.msg = 'Se ha establecido conexión de red.';
+        msg.type = 'success';
         this.messageservice.message(msg);
-      } else if( event.type == 'offline') {
-          msg.msg= 'se perdio la conexión';
+      } else if ( event.type === 'offline') {
+          msg.msg = 'Se ha perdido la conexión de red.';
           msg.type = 'error';
           this.messageservice.message(msg);
       }
