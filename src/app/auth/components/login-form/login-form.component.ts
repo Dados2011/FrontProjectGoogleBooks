@@ -9,16 +9,23 @@ import { Login, ILogin } from '../../models/user/auth';
 export class LoginFormComponent implements OnInit {
 
   @Output() submited = new EventEmitter();
+  @Output() signByGoogle = new EventEmitter<boolean>();
+
   login: ILogin;
+
   constructor() {
     this.login = new Login();
    }
-  
+
   ngOnInit() {
   }
 
-  submit(){
-    this.submited.emit(this.login);    
+  submit() {
+    this.submited.emit(this.login);
+  }
+
+  signGoogle() {
+    this.signByGoogle.emit(true);
   }
 
 }

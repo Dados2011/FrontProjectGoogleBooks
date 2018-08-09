@@ -11,8 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '../../../node_modules/@angular
     CommonModule,
     RouterModule.forChild(routes),
     FormsModule,
-    ReactiveFormsModule    
-  ],   
+    ReactiveFormsModule
+  ],
   declarations: [LoginComponent, LoginFormComponent]
 })
 export class AuthModule { }

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { User } from '../../../auth/models/user/user';
 import { trigger, state, style, transition, animate } from '@angular/animations';
+import { User } from 'firebase/app';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-aside-left',
@@ -24,16 +25,15 @@ export class AsideLeftComponent implements OnInit {
   user: User;
   @Input() asideState: string;
 
-  constructor() { }
+  constructor(private authFire: AngularFireAuth) { }
 
   ngOnInit() {
-    this.user = {
-      name: 'usuario',
-      lastname: 'prueba',
-      username: 'pruebaUser',
-      email: 'usuario@prueba.com',
-      urlImage: 'http://s3.amazonaws.com/37assets/svn/765-default-avatar.png'
-    };
+    this.authFire.authState
+    .subscribe(
+      user => {
+        this.user = user;
+      }
+    );
   }
 
 }

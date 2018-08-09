@@ -1,18 +1,17 @@
 import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AuthGuardsService } from './auth/services/guards/auth-guards.service';
 
 export const ROUTES: Routes = [
-    {
-        path: 'login',
-        loadChildren: './auth/auth.module#AuthModule'
-   },
    {
         path: '',
-        loadChildren: './core/core.module#CoreModule'
+        loadChildren: './core/core.module#CoreModule',
+        canActivate: [AuthGuardsService]
    },
    {
         path: '**',
-        redirectTo: ''
+        redirectTo: '/',
+        pathMatch: 'full'
     }
 ];
 

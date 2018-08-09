@@ -11,6 +11,9 @@
       </p>
   </div>
   <div class="book-image">
-      <img [src]="book.volumeInfo?.imageLinks.smallThumbnail">
+    <img [src]="book.volumeInfo?.imageLinks.large || book.volumeInfo?.imageLinks.thumbnail">
+    <button class="btn btn-primary" (click)="addFavorite()">
+        <i class="fa fa-heart"></i> Favorito
+    </button>
   </div>
 </div>

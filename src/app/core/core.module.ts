@@ -10,6 +10,8 @@ import { TopNavBarComponent } from './containers/top-nav-bar/top-nav-bar.compone
 import { routes } from './routes.core';
 import { AppPipesModule } from '../app-pipes/app-pipes.module';
 import { AlertsModule } from '../alerts/alerts.module';
+import { AuthModule } from '../auth/auth.module';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 
 const COMPONENTS = [
   CoreComponent,
@@ -17,7 +19,8 @@ const COMPONENTS = [
   AsideLeftComponent,
   MainContentComponent,
   TopAsideLeftComponent,
-  MenuAsideLeftComponent
+  MenuAsideLeftComponent,
+  SearchFormComponent
 ];
 
 @NgModule({
@@ -25,7 +28,8 @@ const COMPONENTS = [
     CommonModule,
     AppPipesModule,
     RouterModule.forChild(routes),
-    AlertsModule
+    AlertsModule,
+    AuthModule
   ],
   declarations: COMPONENTS
 })

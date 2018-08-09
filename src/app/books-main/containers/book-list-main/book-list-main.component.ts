@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BookListService } from '../../services/list/book-list.service';
+import { BookList } from '../../models/books';
 
 @Component({
   selector: 'app-books-list-main',
@@ -8,15 +9,15 @@ import { BookListService } from '../../services/list/book-list.service';
 })
 export class BooksListMainComponent implements OnInit {
 
-  booksList: any[];
+  booksList: BookList;
 
   constructor(private booksService: BookListService) {
-    this.booksList = [];
+    this.booksService.searchBooks('Software');
   }
 
   ngOnInit() {
-    this.booksService.getBookList()
-    .subscribe((books: any) => {
+    this.booksService.bookList
+    .subscribe((books: BookList) => {
       if (books) {
         this.booksList = books;
       }

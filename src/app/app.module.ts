@@ -11,7 +11,10 @@ import { HttpClientInMemoryWebApiModule } from '../../node_modules/angular-in-me
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { BooksDBService } from './api-data/api-books-demo';
 import { AuthModule } from './auth/auth.module';
-
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -27,9 +30,12 @@ import { AuthModule } from './auth/auth.module';
     FormsModule,
     ReactiveFormsModule,
     AuthModule,
-    HttpClientInMemoryWebApiModule.forRoot(
-      BooksDBService, {dataEncapsulation: false, delay: 3000}
-    )
+    // HttpClientInMemoryWebApiModule.forRoot(
+    //   BooksDBService, {dataEncapsulation: false, delay: 3000}
+    // )
+    AngularFireModule.initializeApp(environment.firebase, 'bzg-books-app'),
+    AngularFireAuthModule,
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -22,12 +22,16 @@ export class BookDetailComponent implements OnInit {
 
     this.route.params.subscribe((params: Params) => {
       id = params.id;
-      this.bookservices.getBookList(id)
+      this.bookservices.getBook(id)
       .subscribe((book: any) => {
-        this.book = book[0];
+        this.book = book;
       });
     });
 
+  }
+
+  addFavorite() {
+    this.bookservices.addFavorite(this.book);
   }
 
 }
