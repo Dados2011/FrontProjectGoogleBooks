@@ -1,13 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable, of, Subject } from '../../../../../node_modules/rxjs';
+import { Observable, of, Subject } from 'rxjs';
 import { MessagesService } from '../../../alerts/services/messages.service';
 import { catchError} from 'rxjs/operators';
 import { environment } from '../../../../environments/environment';
 import { BookList } from '../../models/books';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
-import * as firebase from 'firebase/app';
+import * as firebase from 'firebase';
 
 @Injectable({
   providedIn: 'root'
