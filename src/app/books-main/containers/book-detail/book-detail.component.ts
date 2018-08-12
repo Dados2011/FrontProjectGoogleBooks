@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { BookListService } from '../../services/list/book-list.service';
+import { BookList } from '../../models/books';
 
 
 @Component({
@@ -11,27 +12,36 @@ import { BookListService } from '../../services/list/book-list.service';
 export class BookDetailComponent implements OnInit {
 
   book: any;
+  booksList: BookList;
+
 
   constructor(private route: ActivatedRoute,
-    private bookservices: BookListService) {
+    private booksServices: BookListService) {
     this.book = {};
+    this.booksServices.searchBooks('software');
   }
 
   ngOnInit() {
     let id: string;
-
+    
+    this.booksServices.bookList
+    .subscribe((books: BookList) => {
+      if (books) {
+        this.booksList = books;
+      }
+    });
     this.route.params.subscribe((params: Params) => {
       id = params.id;
-      this.bookservices.getBook(id)
+      this.booksServices.getBook(id)
       .subscribe((book: any) => {
         this.book = book;
       });
     });
-
+    
   }
 
   addFavorite() {
-    this.bookservices.addFavorite(this.book);
+    this.booksServices.addFavorite(this.book);
   }
 
 }
