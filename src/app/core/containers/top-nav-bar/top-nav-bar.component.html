@@ -12,10 +12,25 @@
         <div class="col-6">
           <app-search-form (searchText)="searchBooks($event)"></app-search-form>
         </div>
-        <div class="col-6">
+        <div class="col-6 dropdown">
           <a class="link-profile">
-            <i class="fa fa-user-circle"></i>
+            <i class="fa fa-user-circle profile"></i>
           </a>
+          <div class="info-profile">
+              <div class="user-info">
+                  <i class="fa fa-user-circle profile"></i>
+                  <div class="user-detail">
+                      <p class="username">{{user?.displayName}}</p>
+                      <p>registrado desde : {{user?.metadata.creationTime}}</p>
+                  </div>
+              </div>
+              <hr>
+              <div class="userbooks-info">
+                <div class="item-detail"><p class="count">25</p><p>Libros</p></div>
+                <div class="item-detail"><p class="count">25</p><p>Favoritos</p></div>
+                <div class="item-detail"><p class="count">25</p><p>Colecciones</p></div>
+              </div>
+          </div>
         </div>
       </div>
 
