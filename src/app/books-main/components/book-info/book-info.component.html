@@ -1,14 +1,14 @@
 <h1>{{book.volumeInfo?.title}}</h1>
 <div class="row">
   <div class="col-lg-8 col-md-6 col-sm-12 col-12">
-    <div [innerHtml]="book.volumeInfo?.description">      
+    <div [innerHtml]="book.volumeInfo?.description">
     </div>
     <p>
       {{book.volumeInfo?.publisher}}
-     </p>
+    </p>
     <p>
       {{book.volumeInfo?.publishedDate}}
-     </p>
+    </p>
   </div>
   <div class="col-lg-4 col-md-6 col-sm-12 col-12">
     <div class="row">
@@ -17,10 +17,19 @@
       </div>
     </div>
     <br>
-    <div class="row">
-      <div class="col-12">
+    <div *ngIf="!addToCollectionVisible" class="row">
+      <div class="col-6">
         <button class="btn btn-primary" (click)="addFavorite()">
           <i class="fa fa-heart"></i> Favorito</button>
+      </div>
+      <div class="col-6">
+        <button class="btn btn-primary" (click)="addItemCollection()">
+          <i class="fa fa-object-group"></i> Add to collection</button>
+      </div>
+    </div>
+    <div *ngIf="addToCollectionVisible" class="row">
+      <div class="col-12">
+        <app-add-collection (createNewCollection)="createNewCollection($event)" (addToCollection)="addItemToCollection($event)"></app-add-collection>
       </div>
     </div>
   </div>

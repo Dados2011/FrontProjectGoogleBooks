@@ -1,0 +1,16 @@
+<div class="row">
+  <label>Colección:
+    <ng-select [items]="instancesDatabase | async" bindLabel="name" placeholder="select collection"
+      [addTag]="addCollection" addTagText="add collection"
+      [clearable]="false"
+      [(ngModel)]="selectedCollection">
+    </ng-select>
+  </label>
+</div>
+<br>
+<div class="row">
+  <div class="col-12">
+    <button class="btn btn-primary" (click)="addNewItemToCollection()">
+      <i class="fa fa-object-group"></i> Adicionar</button>
+  </div>
+</div>

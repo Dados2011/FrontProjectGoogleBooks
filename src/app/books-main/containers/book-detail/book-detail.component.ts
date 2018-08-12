@@ -34,4 +34,12 @@ export class BookDetailComponent implements OnInit {
     this.bookservices.addFavorite(this.book);
   }
 
+  createCollection(nameCollection: string) {
+    this.bookservices.createCollection(nameCollection);
+  }
+
+  addToCollection(collection: any) {
+    this.bookservices.updateCollection(collection, this.book);
+  }
+
 }

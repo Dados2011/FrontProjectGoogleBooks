@@ -5,12 +5,18 @@ import { BookDetailComponent } from './containers/book-detail/book-detail.compon
 import { BooksListMainComponent } from './containers/book-list-main/book-list-main.component';
 import { routes } from './routes.books-main';
 import { BookInfoComponent } from './components/book-info/book-info.component';
+import { AddCollectionComponent } from './components/add-collection/add-collection.component';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    NgSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  declarations: [BookDetailComponent, BooksListMainComponent, BookInfoComponent]
+  declarations: [BookDetailComponent, BooksListMainComponent, BookInfoComponent, AddCollectionComponent]
 })
 export class BooksMainModule { }
