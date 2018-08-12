@@ -1,4 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { BookList } from '../../models/books';
+import { BookListService } from '../../services/list/book-list.service';
+
+
  @Component({
   selector: 'app-book-info',
   templateUrl: './book-info.component.html',
@@ -6,6 +10,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class BookInfoComponent implements OnInit {
   @Input() book: any;
+  @Input() booksList : BookList;
   @Output() pushFavorite = new EventEmitter<any>();
   @Output() createCollection = new EventEmitter<string>();
   @Output() addToCollection = new EventEmitter<any>()
