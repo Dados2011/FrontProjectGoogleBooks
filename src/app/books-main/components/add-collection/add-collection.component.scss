@@ -1,3 +1,32 @@
-ng-select {
+.bk-input {
     width: 100%;
+    border-radius: 0;
+    border: 1px solid #bec5ca;
+    padding: 8px 16px;
+    margin-top: 8px;
+    color: #555555;
+    &.ng-invalid {
+        border-color: #D04445; 
+    }
+}
+
+:host /deep/ {
+    .ng-select {
+        width: 100%;
+        border-right: 0;
+        margin-top: 8px;
+        color: #555555;
+        .ng-select-container {
+            border-radius: 0;
+            border: 1px solid #bec5ca;
+        }
+        &.ng-invalid.ng-touched .ng-select-container {
+            border-color: #D04445;
+        }
+    }
+    .ng-dropdown-panel{
+        &.ng-select-bottom {
+            right: 0;
+        }
+    }
 }
