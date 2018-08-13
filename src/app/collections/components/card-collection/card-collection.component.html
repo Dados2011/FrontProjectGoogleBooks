@@ -2,6 +2,8 @@
   <div class="card-header">
       <p class="card-text">
           {{collection.name}}
-        </p>            
+        </p>    
+        <a class="col-12 col-md-auto col-lg-auto btn btn-primary" [routerLink]="['../detail/', collection.key]">Entrar</a>        
+        <a class="col-12 col-md-auto col-lg-auto btn btn-primary" (click)="deleteCollections()">Eliminar</a>        
   </div>
 </div>

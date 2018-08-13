@@ -29,4 +29,13 @@ export class CollectionListComponent implements OnInit {
     );
   }
 
+  deleteCollection(key: any) {
+    this.authFire.authState
+    .subscribe(
+      user => {
+        this.colService.deleteCollection(user, key);
+      }
+    );
+  }
+
 }

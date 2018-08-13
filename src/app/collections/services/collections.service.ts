@@ -19,4 +19,9 @@ export class CollectionsService {
     return this.favsRef = this.rdb.list('collections/' + user.uid);
   }
 
+  deleteCollection(user: firebase.User, key: any) {
+    const itemsRef = this.rdb.list('collections/' + user.uid);
+    itemsRef.remove(key);
+    }
+
 }
