@@ -6,6 +6,9 @@ import { BookListService } from '../../../books-main/services/list/book-list.ser
 import { ThrowStmt } from '../../../../../node_modules/@angular/compiler';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { User } from 'firebase';
+import { FavoritesService } from '../../../favorites/services/favorites.service';
+import { Observable } from '../../../../../node_modules/rxjs';
+import { CollectionsService } from '../../../collections/services/collections.service';
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -17,9 +20,15 @@ export class TopNavBarComponent implements OnInit {
   state: string;
   isOpenprofile: boolean;
   user: User;
+  favoriteList: Observable<any[]>;
+  favoritesCount: number;
+  collectionsCount: number;
+
   constructor(private bookService: BookListService, 
     private store: Store<fromRoot.State>,
-    private authFire: AngularFireAuth) { 
+    private authFire: AngularFireAuth,
+    private favoriteServices:FavoritesService,
+    private collectionServices: CollectionsService) { 
 
   }
 
@@ -29,6 +38,13 @@ export class TopNavBarComponent implements OnInit {
     .subscribe(
       user => {
         this.user = user;
+        this.favoriteServices.listFavorites(this.user).valueChanges().subscribe(
+          list => {
+              this.favoritesCount = list.length;
+          });
+        this.collectionServices.listCollections(this.user).valueChanges().subscribe (collections =>{
+          this.collectionsCount = collections.length;
+        });
       }
     );
   }
@@ -53,6 +69,10 @@ export class TopNavBarComponent implements OnInit {
     } else {
       this.isOpenprofile = true;
     }
+  }
+
+  getFavoritesCount() {
+
   }
 
 }

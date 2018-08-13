@@ -16,4 +16,5 @@ export class FavoritesService {
   listFavorites(user: firebase.User): AngularFireList<any[]> {
       return this.favsRef = this.rdb.list('favorites/' + user.uid);
   }
+
 }
