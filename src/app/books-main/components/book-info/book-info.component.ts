@@ -14,7 +14,6 @@ export class BookInfoComponent implements OnInit {
   @Output() pushFavorite = new EventEmitter<any>();
   @Output() createCollection = new EventEmitter<string>();
   @Output() addToCollection = new EventEmitter<any>();
-  @Output() refreshSuggestedBookList = new EventEmitter<any>();
 
   public addToCollectionVisible: boolean;
 
@@ -30,10 +29,6 @@ export class BookInfoComponent implements OnInit {
 
   addSuggestedFavorite(book: any) {
     this.pushFavorite.emit(book);
-  }
-
-  refreshSuggestedBooks(recomBook) {
-    this.bookService.searchBooks(recomBook.volumeinfo.title);
   }
 
   addItemCollection() {
