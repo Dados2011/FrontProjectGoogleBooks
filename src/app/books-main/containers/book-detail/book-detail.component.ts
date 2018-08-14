@@ -2,7 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { BookListService } from '../../services/list/book-list.service';
 import { BookList } from '../../models/books';
-import { subscribeOn } from '../../../../../node_modules/rxjs/operators';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { subscribeOn } from '../../../../../node_modules/rxjs/operators';
 export class BookDetailComponent implements OnInit {
 
   book: any;
-  booksList: BookList;
+  booksList: Observable<BookList>;
 
 
   constructor(private route: ActivatedRoute,
@@ -23,23 +23,17 @@ export class BookDetailComponent implements OnInit {
 
   ngOnInit() {
     let id: string;
-    
-    this.booksServices.bookList
-    .subscribe((books: BookList) => {
-      if (books) {
-        
-      }
-    });
     this.route.params.subscribe((params: Params) => {
       id = params.id;
       this.booksServices.getBook(id)
       .subscribe((book: any) => {
         this.book = book;
-        this.booksServices.searchSuggestedBooks(this.book.volumeInfo.authors[0]);
-        this.booksServices.suggestedBooks.
-        subscribe((books:BookList) =>{
-          this.booksList = books;
-        });
+        if(this.book.volumeInfo.authors && this.book.volumeInfo.authors.length > 0) {
+          this.booksServices.searchSuggestedBooks(this.book.volumeInfo.authors[0]);
+        } else {
+          this.booksServices.searchSuggestedBooks(this.book.volumeInfo.title);
+        }
+        this.booksList =this.booksServices.suggestedBooks;
       });
     });
     

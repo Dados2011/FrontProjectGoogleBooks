@@ -1,5 +1,5 @@
 <div class="book" >                              
-    <app-book-info [book]="book" [booksList] ="booksList"
+    <app-book-info [book]="book" [booksList] ="booksList | async"
     (pushFavorite)="addFavorite($event)"
     (createCollection)="createCollection($event)"
     (addToCollection)="addToCollection($event)"></app-book-info>
