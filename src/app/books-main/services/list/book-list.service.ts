@@ -19,6 +19,7 @@ export class BookListService {
   favsRef: AngularFireList<any>;
   collectionsRef: AngularFireList<any>;
   user: firebase.User;
+  suggestedBooks: Subject<BookList> = new Subject();
 
   constructor(private http: HttpClient, private alertService: MessagesService,
     private authFire: AngularFireAuth, private rdb: AngularFireDatabase) {
@@ -63,6 +64,24 @@ export class BookListService {
       );
   }
 
+  searchSuggestedBooks(text: string, startIndex?: number, maxResults?: number) {
+    let url = this.url + `volumes?q=${text}`;
+    if (startIndex) {
+      url += `&startIndex=${startIndex}`;
+    }
+    if (maxResults) {
+      url += `&maxResults=${maxResults}`;
+    }
+    this.http.get<BookList>(url)
+      .pipe(
+        catchError(this.handleError<BookList>('Obtener lista de libros', null))
+      )
+      .subscribe(
+        books => {
+          this.suggestedBooks.next(books);
+        }
+      );
+  }
   getBook(id: string): Observable<any> {
     const url = this.url + `volumes/${id}`;
     return this.http.get(url).pipe(
