@@ -12,6 +12,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 export class CollectionDetailsComponent implements OnInit {
 
   public collection: any;
+  bookList: any;
 
   constructor(private colService: CollectionsService, private authFire: AngularFireAuth, private route: ActivatedRoute) { }
 
@@ -30,6 +31,7 @@ export class CollectionDetailsComponent implements OnInit {
         this.colService.getCollection(user, key).valueChanges()
         .subscribe(col => {
           this.collection = col;
+          this.bookList = col.list;
         });
       });
   }
