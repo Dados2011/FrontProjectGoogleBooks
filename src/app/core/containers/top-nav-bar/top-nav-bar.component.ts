@@ -9,6 +9,7 @@ import { User } from 'firebase';
 import { FavoritesService } from '../../../favorites/services/favorites.service';
 import { Observable } from '../../../../../node_modules/rxjs';
 import { CollectionsService } from '../../../collections/services/collections.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-top-nav-bar',
@@ -28,7 +29,8 @@ export class TopNavBarComponent implements OnInit {
     private store: Store<fromRoot.State>,
     private authFire: AngularFireAuth,
     private favoriteServices:FavoritesService,
-    private collectionServices: CollectionsService) { 
+    private collectionServices: CollectionsService,
+    private router: Router) { 
 
   }
 
@@ -60,6 +62,7 @@ export class TopNavBarComponent implements OnInit {
   }
 
   searchBooks(text: string) {
+    this.router.navigateByUrl('/');
     this.bookService.searchBooks(text, 0, 20);
   }
 

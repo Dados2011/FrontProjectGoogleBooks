@@ -17,7 +17,7 @@ export class BookInfoComponent implements OnInit {
 
   public addToCollectionVisible: boolean;
 
-  constructor() { }
+  constructor(private bookService: BookListService) { }
 
   ngOnInit() {
     this.addToCollectionVisible = false;
@@ -25,6 +25,10 @@ export class BookInfoComponent implements OnInit {
 
   addFavorite() {
     this.pushFavorite.emit(this.book);
+  }
+
+  addSuggestedFavorite(book: any) {
+    this.pushFavorite.emit(book);
   }
 
   addItemCollection() {

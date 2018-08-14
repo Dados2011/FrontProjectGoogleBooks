@@ -40,8 +40,8 @@ export class BookDetailComponent implements OnInit {
     
   }
 
-  addFavorite() {
-    this.booksServices.addFavorite(this.book);
+  addFavorite(event) {
+    this.booksServices.addFavorite(event);
   }
 
   createCollection(nameCollection: string) {
