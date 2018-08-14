@@ -37,6 +37,7 @@ export class BookInfoComponent implements OnInit {
 
   addItemToCollection(collection: any) {
     this.addToCollection.emit(collection);
+    this.addToCollectionVisible = false;
   }
 
   createNewCollection(nameNewCollection: string) {
