@@ -12,6 +12,11 @@ import { AppPipesModule } from '../app-pipes/app-pipes.module';
 import { AlertsModule } from '../alerts/alerts.module';
 import { AuthModule } from '../auth/auth.module';
 import { SearchFormComponent } from './components/search-form/search-form.component';
+import { BzModalComponent } from './components/modal';
+import { ConfigDialog } from './components/dialog';
+import { ConfirmDialogComponent } from './components/dialog/confirm.component';
+import { DialogServices } from './components/dialog/dialog.services';
+import { DialogPromiseServices } from './components/dialog/dialog.promise.services';
 
 const COMPONENTS = [
   CoreComponent,
@@ -20,7 +25,9 @@ const COMPONENTS = [
   MainContentComponent,
   TopAsideLeftComponent,
   MenuAsideLeftComponent,
-  SearchFormComponent
+  SearchFormComponent,
+  BzModalComponent,
+  ConfirmDialogComponent
 ];
 
 @NgModule({
@@ -31,6 +38,10 @@ const COMPONENTS = [
     AlertsModule,
     AuthModule
   ],
-  declarations: COMPONENTS
+  declarations: COMPONENTS,
+  providers: [
+      { provide: ConfigDialog.DIALOGSERVICES , useClass: DialogServices },
+      { provide: ConfigDialog.DIALOGPROMISESERVICES , useClass: DialogPromiseServices }
+  ]
 })
 export class CoreModule { }

@@ -1,0 +1,13 @@
+<div *ngIf="showModal" class="be-overlay">
+  <div class="modal-backdrop"></div>
+  <div class="be-modal">
+    <div class="modal">
+      <div class="modal-content">
+        <button (click)="onCancel()" class="close" type="button">
+          <i class="bz-icon bz-icon-close-outline"></i>
+        </button>
+        <ng-content></ng-content>
+      </div>
+    </div>
+  </div>
+</div>

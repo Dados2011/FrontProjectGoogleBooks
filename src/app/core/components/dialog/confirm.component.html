@@ -1,0 +1,20 @@
+<app-bz-modal [showModal]="showModal" (cancel)="onCloseModal()" [ngClass] ="getStyle()">    
+    <div class="modal-header">
+        <div class="modal-title">{{params.title}}</div>
+    </div>
+    <div class="modal-body" *ngIf ="getStyle() != 'be-dialog-style-2'">
+        <div>{{params.body}}</div>
+    </div>
+    <div class="warning-container" *ngIf ="getStyle() == 'be-dialog-style-2'">
+            <div><i class="bz-icon bz-icon-32 warning-icon-style bz-icon-warning-outline warning-icon-style"></i></div>
+            <div class="modal-body"><p>{{params.body}}</p></div>
+        </div>
+    <div class="modal-footer" *ngIf ="getStyle() !== 'be-dialog-style-1'">
+        <button class="btn btn-secundary" (click)="onCloseModal()">{{params.cancelButtonText}}</button>
+        <button class="btn btn-primary" (click)="onOk()">{{params.okButtonText}}</button>
+    </div>
+    <div class="modal-footer" *ngIf ="getStyle() === 'be-dialog-style-1'">
+        <button class="btn btn-primary" (click)="onOk()">{{params.okButtonText}}</button>
+        <button class="btn btn-secundary" (click)="onCloseModal()">{{params.cancelButtonText}}</button>
+    </div>
+</app-bz-modal>
