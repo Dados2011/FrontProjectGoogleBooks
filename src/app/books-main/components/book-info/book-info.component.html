@@ -41,11 +41,11 @@
           <div class="box">
               <div class="suggested-books" *ngFor= "let recomBook of booksList.items" >
                 <div class= "sugg-book" *ngIf ="recomBook.volumeInfo?.imageLinks?.large || recomBook.volumeInfo?.imageLinks?.thumbnail">
-                    <a class="col-12 col-md-auto col-lg-auto btn" [routerLink]="['../../detail/', recomBook.id]">
+                  <a class=" btn" [routerLink]="['../../detail/', recomBook.id]"> 
                     <img class="sgg-img" [src]="recomBook.volumeInfo?.imageLinks?.large || recomBook.volumeInfo?.imageLinks?.thumbnail">
                     </a>
                 </div>
-                <div class="col-12" *ngIf ="!recomBook.volumeInfo?.imageLinks?.large && !recomBook.volumeInfo?.imageLinks?.thumbnail" class ="non-image">
+                <div *ngIf ="!recomBook.volumeInfo?.imageLinks?.large && !recomBook.volumeInfo?.imageLinks?.thumbnail" class ="non-image"> 
                     <i class="fa fa-file-image-o" aria-hidden="true"></i>
                   </div>
                   <div class="footer-suggested">

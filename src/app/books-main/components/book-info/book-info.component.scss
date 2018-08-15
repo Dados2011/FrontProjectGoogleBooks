@@ -12,7 +12,7 @@ h1 {
     height: 160px;
 }
 .box {
-    max-height: 160px;
+    max-height: 200px;
     display: flex;
 }
 .suggested-books {
@@ -26,9 +26,14 @@ h1 {
 .sugg-title {
     color: black;
 }
+.sugg-book {
+    flex-grow: 1;
+}
+ 
 .sgg-img {
-    width: 64px;
-    margin-left: 57px;
+    width: 50%;
+    height: 50%;
+ 
 }
 .footer-suggested {
     font-size: 10px;
