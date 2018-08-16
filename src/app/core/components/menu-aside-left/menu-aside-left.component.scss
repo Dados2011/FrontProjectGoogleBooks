@@ -7,6 +7,10 @@ ul.main-menu > li > a {
     display: block;
     padding: 8px 10px;
     border-bottom: 1px solid var(--input-border-color);
+    color: var(--main-title-color);
+    &:active, &:focus, &:hover{
+        color: var(--main-shadow-colo);
+    }
 }
 
 ul.main-menu > li > a > i {

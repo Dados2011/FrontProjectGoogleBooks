@@ -68,7 +68,7 @@
     .btn-primary {
         border: 1px solid #D0021B;
         background-color: #D0021B;
-        color: #FFFFFF;		
+        color: #555555;		
         font-size: 12px;	
         font-weight: 600;	
     }
@@ -126,14 +126,14 @@
         .btn-primary {
             background-color: #91AD1F;
             border-color: #91AD1F;
-            color: #FFFFFF;
+            color: #555555;
             margin-top: 12px;
             margin-bottom: 12px;
             margin-right: 24px;
             &:disabled {
                 background-color: #DEDEDE;
                 border-color: #DEDEDE;
-                color: #FFFFFF;
+                color: #555555;
                 cursor: default;
             }
         }
